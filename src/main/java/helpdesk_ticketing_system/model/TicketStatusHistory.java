@@ -15,4 +15,8 @@ public class TicketStatusHistory {
     @Column(name = "OLD_STATUS")
     private TicketStatus oldStatus;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "NEW_STATUS")
+    private TicketStatus newStatus;
+
 }
