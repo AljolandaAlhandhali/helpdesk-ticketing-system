@@ -18,4 +18,8 @@ public class CreateTicketRequest {
         return description;
     }
 
+    public Priority getPriority() {
+        return priority;
+    }
+
 }
