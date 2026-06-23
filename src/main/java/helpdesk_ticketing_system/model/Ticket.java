@@ -107,5 +107,9 @@ public class Ticket {
         this.resolvedAt = resolvedAt;
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 
 }
