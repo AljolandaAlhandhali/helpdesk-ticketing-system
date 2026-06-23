@@ -75,4 +75,11 @@ public class TicketController {
     public double averageResolutionTime() {
         return ticketService.averageResolutionTime();
     }
+
+    // Overdue tickets
+    @GetMapping("/overdue")
+    public List<Ticket> getOverdueTickets() {
+        return ticketService.getOverdueTickets();
+    }
+
 }
