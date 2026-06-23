@@ -36,4 +36,8 @@ public class User {
         return lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
 }
