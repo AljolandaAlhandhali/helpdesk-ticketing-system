@@ -14,6 +14,7 @@ public class UserService {
     }
 
     public User createUser(CreateUserRequest request) {
+        User user = new User();
 
     }
 }
