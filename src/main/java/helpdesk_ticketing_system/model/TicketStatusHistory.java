@@ -24,4 +24,8 @@ public class TicketStatusHistory {
     @Column(name = "CHANGED_AT")
     private LocalDateTime changedAt = LocalDateTime.now();
 
+    @ManyToOne
+    @JoinColumn(name = "TICKET_ID")
+    private Ticket ticket;
+
 }
