@@ -51,4 +51,8 @@ public class Ticket {
         return title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
 }
