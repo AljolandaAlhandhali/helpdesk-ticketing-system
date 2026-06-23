@@ -22,4 +22,8 @@ public class CreateTicketRequest {
         return priority;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
 }
