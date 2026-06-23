@@ -10,4 +10,8 @@ public class CreateTicketRequest {
     private Category category;
     private Long userId;
 
+    public String getTitle() {
+        return title;
+    }
+
 }
