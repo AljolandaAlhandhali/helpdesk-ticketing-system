@@ -30,4 +30,8 @@ public class Comment {
         return commentId;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
 }
