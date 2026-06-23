@@ -18,4 +18,9 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
     }
 
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGeneral(Exception ex) {
+        return new ResponseEntity<>("Invalid request", HttpStatus.BAD_REQUEST);
+    }
+
 }
