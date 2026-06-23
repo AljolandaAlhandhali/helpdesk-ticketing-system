@@ -1,5 +1,6 @@
 package helpdesk_ticketing_system.dto;
 
 public class AssignTicketRequest {
+    private Long agentId;
 
 }
