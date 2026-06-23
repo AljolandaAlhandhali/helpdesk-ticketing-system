@@ -14,4 +14,8 @@ public class Agent {
     private String firstName;
     // Agent last name
     private String lastName;
+
+    // Agent email
+    @Column(unique = true, nullable = false)
+    private String email;
 }
