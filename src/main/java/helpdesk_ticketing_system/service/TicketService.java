@@ -163,4 +163,9 @@ public class TicketService {
         };
     }
 
+    public List<TicketStatusHistory> getTicketHistory(Long ticketId) {
+        getTicketById(ticketId);
+        return ticketStatusHistoryRepository.findByTicketTicketId(ticketId);
+    }
+
 }
