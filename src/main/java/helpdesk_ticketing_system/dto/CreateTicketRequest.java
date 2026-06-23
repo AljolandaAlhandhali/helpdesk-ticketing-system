@@ -38,4 +38,8 @@ public class CreateTicketRequest {
         this.description = description;
     }
 
+    public void setPriority(Priority priority) {
+        this.priority = priority;
+    }
+
 }
