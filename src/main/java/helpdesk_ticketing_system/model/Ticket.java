@@ -40,4 +40,7 @@ public class Ticket {
     @JoinColumn(name = "agent_id")
     private Agent agent;
 
+    public Ticket() {
+    }
+
 }
