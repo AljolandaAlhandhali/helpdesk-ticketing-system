@@ -22,4 +22,7 @@ public class Agent {
 
     // Date and time when agent was created
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    public Agent() {
+    }
 }
