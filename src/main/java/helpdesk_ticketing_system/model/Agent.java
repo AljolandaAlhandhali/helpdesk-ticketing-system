@@ -53,4 +53,8 @@ public class Agent {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 }
