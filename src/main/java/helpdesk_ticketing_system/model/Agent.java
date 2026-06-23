@@ -9,4 +9,9 @@ public class Agent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long agentId;
+
+    // Agent first name
+    private String firstName;
+    // Agent last name
+    private String lastName;
 }
