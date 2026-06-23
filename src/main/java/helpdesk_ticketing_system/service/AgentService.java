@@ -7,4 +7,8 @@ import org.springframework.stereotype.Service;
 public class AgentService {
     private final AgentRepository agentRepository;
 
+    public AgentService(AgentRepository agentRepository) {
+        this.agentRepository = agentRepository;
+    }
+
 }
