@@ -71,4 +71,8 @@ public class Ticket {
         return createdAt;
     }
 
+    public LocalDateTime getResolvedAt() {
+        return resolvedAt;
+    }
+
 }
