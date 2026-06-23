@@ -142,4 +142,15 @@ public class TicketService {
                 .orElse(0);
     }
 
+    // Overdue tickets
+    public List<Ticket> getOverdueTickets() {
+        LocalDateTime now = LocalDateTime.now();
+
+        return ticketRepository.findAll()
+                .stream()
+                .filter(ticket -> ticket.getStatus() != TicketStatus.CLOSED)
+                .filter(ticket -> now.isAfter(ticket.getCreatedAt().plus(getSlaDuration(ticket.getPriority()))))
+                .toList();
+    }
+
 }
