@@ -18,4 +18,9 @@ public class Comment {
     // Date and time when comment was created
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    // Many comments belong to one ticket
+    @ManyToOne
+    @JoinColumn(name = "ticket_id")
+    private Ticket ticket;
+
 }
