@@ -87,4 +87,8 @@ public class Ticket {
         this.title = title;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }
