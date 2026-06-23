@@ -26,4 +26,8 @@ public class Comment {
     public Comment() {
     }
 
+    public Long getCommentId() {
+        return commentId;
+    }
+
 }
