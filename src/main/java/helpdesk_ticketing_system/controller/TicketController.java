@@ -2,6 +2,7 @@ package helpdesk_ticketing_system.controller;
 
 import helpdesk_ticketing_system.dto.AssignTicketRequest;
 import helpdesk_ticketing_system.dto.CreateTicketRequest;
+import helpdesk_ticketing_system.dto.UpdateStatusRequest;
 import helpdesk_ticketing_system.model.Ticket;
 import helpdesk_ticketing_system.service.TicketService;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,13 @@ public class TicketController {
     public Ticket assignTicket(@PathVariable Long ticketId,
                                @RequestBody AssignTicketRequest request) {
         return ticketService.assignTicket(ticketId, request);
+    }
+
+    // Update ticket status
+    @PostMapping("/{ticketId}/status")
+    public Ticket updateStatus(@PathVariable Long ticketId,
+                               @RequestBody UpdateStatusRequest request) {
+        return ticketService.updateStatus(ticketId, request);
     }
 
 }
