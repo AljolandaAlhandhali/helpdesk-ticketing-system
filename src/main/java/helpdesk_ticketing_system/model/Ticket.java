@@ -79,4 +79,8 @@ public class Ticket {
         return user;
     }
 
+    public Agent getAgent() {
+        return agent;
+    }
+
 }
