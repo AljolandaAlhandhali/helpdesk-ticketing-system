@@ -36,4 +36,8 @@ public class Ticket {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "agent_id")
+    private Agent agent;
+
 }
