@@ -9,6 +9,7 @@ import helpdesk_ticketing_system.enums.Priority;
 import helpdesk_ticketing_system.enums.TicketStatus;
 import helpdesk_ticketing_system.model.Comment;
 import helpdesk_ticketing_system.model.Ticket;
+import helpdesk_ticketing_system.model.TicketStatusHistory;
 import helpdesk_ticketing_system.service.TicketService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -80,6 +81,12 @@ public class TicketController {
     @GetMapping("/overdue")
     public List<Ticket> getOverdueTickets() {
         return ticketService.getOverdueTickets();
+    }
+
+    // Get ticket status history
+    @GetMapping("/{ticketId}/history")
+    public List<TicketStatusHistory> getTicketHistory(@PathVariable Long ticketId) {
+        return ticketService.getTicketHistory(ticketId);
     }
 
 }
