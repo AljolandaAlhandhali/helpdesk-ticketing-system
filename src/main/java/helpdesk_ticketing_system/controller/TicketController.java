@@ -49,4 +49,11 @@ public class TicketController {
         return ticketService.addComment(ticketId, request);
     }
 
+    // Get ticket details
+    @GetMapping("/{ticketId}")
+    public Ticket getTicketById(@PathVariable Long ticketId) {
+        return ticketService.getTicketById(ticketId);
+    }
+
+
 }
