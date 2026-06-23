@@ -23,4 +23,7 @@ public class Comment {
     @JoinColumn(name = "ticket_id")
     private Ticket ticket;
 
+    public Comment() {
+    }
+
 }
