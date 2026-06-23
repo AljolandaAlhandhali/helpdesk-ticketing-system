@@ -14,4 +14,8 @@ public class CreateTicketRequest {
         return title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
 }
