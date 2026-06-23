@@ -46,4 +46,8 @@ public class CreateTicketRequest {
         this.category = category;
     }
 
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
 }
