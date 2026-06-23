@@ -1,6 +1,7 @@
 package helpdesk_ticketing_system.model;
 
 import helpdesk_ticketing_system.enums.Priority;
+import helpdesk_ticketing_system.enums.TicketStatus;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,5 +18,8 @@ public class Ticket {
 
     @Enumerated(EnumType.STRING)
     private Priority priority;
+
+    @Enumerated(EnumType.STRING)
+    private TicketStatus status = TicketStatus.OPEN;
 
 }
