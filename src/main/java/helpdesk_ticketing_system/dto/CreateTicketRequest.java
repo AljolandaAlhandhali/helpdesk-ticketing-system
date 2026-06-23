@@ -42,4 +42,8 @@ public class CreateTicketRequest {
         this.priority = priority;
     }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
 }
