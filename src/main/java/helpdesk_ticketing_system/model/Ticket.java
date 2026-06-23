@@ -99,5 +99,9 @@ public class Ticket {
         this.status = status;
     }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
 
 }
