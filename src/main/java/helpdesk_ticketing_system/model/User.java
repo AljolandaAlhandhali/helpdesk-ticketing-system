@@ -40,4 +40,8 @@ public class User {
         return email;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
 }
