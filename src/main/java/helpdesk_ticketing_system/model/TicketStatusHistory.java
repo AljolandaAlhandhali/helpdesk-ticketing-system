@@ -47,4 +47,8 @@ public class TicketStatusHistory {
         return changedAt;
     }
 
+    public Ticket getTicket() {
+        return ticket;
+    }
+
 }
