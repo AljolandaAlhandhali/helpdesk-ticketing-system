@@ -31,4 +31,8 @@ public class TicketStatusHistory {
     public TicketStatusHistory() {
     }
 
+    public Long getHistoryId() {
+        return historyId;
+    }
+
 }
