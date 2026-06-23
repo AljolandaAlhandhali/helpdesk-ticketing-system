@@ -1,5 +1,7 @@
 package helpdesk_ticketing_system.service;
 
+import helpdesk_ticketing_system.dto.CreateAgentRequest;
+import helpdesk_ticketing_system.model.Agent;
 import helpdesk_ticketing_system.repository.AgentRepository;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +11,11 @@ public class AgentService {
 
     public AgentService(AgentRepository agentRepository) {
         this.agentRepository = agentRepository;
+    }
+
+    // Create new agent
+    public Agent createAgent(CreateAgentRequest request) {
+
     }
 
 }
