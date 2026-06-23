@@ -17,5 +17,6 @@ public class UserService {
         User user = new User();
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
+        user.setEmail(request.getEmail());
     }
 }
