@@ -21,4 +21,8 @@ public class CreateUserRequest {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
 }
