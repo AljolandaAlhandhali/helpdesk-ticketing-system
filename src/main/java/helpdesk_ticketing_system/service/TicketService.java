@@ -4,6 +4,8 @@ import helpdesk_ticketing_system.dto.AssignTicketRequest;
 import helpdesk_ticketing_system.dto.CreateCommentRequest;
 import helpdesk_ticketing_system.dto.CreateTicketRequest;
 import helpdesk_ticketing_system.dto.UpdateStatusRequest;
+import helpdesk_ticketing_system.enums.Category;
+import helpdesk_ticketing_system.enums.Priority;
 import helpdesk_ticketing_system.enums.TicketStatus;
 import helpdesk_ticketing_system.exception.BusinessRuleException;
 import helpdesk_ticketing_system.exception.ResourceNotFoundException;
@@ -12,6 +14,7 @@ import helpdesk_ticketing_system.repository.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class TicketService {
@@ -116,6 +119,16 @@ public class TicketService {
     public Ticket getTicketById(Long ticketId) {
         return ticketRepository.findById(ticketId)
                 .orElseThrow(() -> new ResourceNotFoundException("Ticket not found"));
+    }
+
+    // Search tickets
+    public List<Ticket> searchTickets(TicketStatus status, Priority priority, Category category, Long assignedTo) {
+        if (status != null) return ticketRepository.findByStatus(status);
+        if (priority != null) return ticketRepository.findByPriority(priority);
+        if (category != null) return ticketRepository.findByCategory(category);
+        if (assignedTo != null) return ticketRepository.findByAgentAgentId(assignedTo);
+
+        return ticketRepository.findAll();
     }
 
 }
