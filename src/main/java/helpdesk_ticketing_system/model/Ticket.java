@@ -55,4 +55,8 @@ public class Ticket {
         return description;
     }
 
+    public Priority getPriority() {
+        return priority;
+    }
+
 }
