@@ -10,4 +10,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long commentId;
 
+    // Comment message
+    private String message;
+
 }
