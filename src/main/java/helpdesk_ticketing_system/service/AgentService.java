@@ -17,6 +17,7 @@ public class AgentService {
     public Agent createAgent(CreateAgentRequest request) {
         Agent agent = new Agent();
         agent.setFirstName(request.getFirstName());
+        agent.setLastName(request.getLastName());
 
     }
 
