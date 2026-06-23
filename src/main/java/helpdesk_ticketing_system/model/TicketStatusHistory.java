@@ -1,5 +1,6 @@
 package helpdesk_ticketing_system.model;
 
+import helpdesk_ticketing_system.enums.TicketStatus;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,5 +10,9 @@ public class TicketStatusHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "HISTORY_ID")
     private Long historyId;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "OLD_STATUS")
+    private TicketStatus oldStatus;
 
 }
