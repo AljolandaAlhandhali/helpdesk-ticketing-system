@@ -1,8 +1,10 @@
 package helpdesk_ticketing_system.controller;
 
 import helpdesk_ticketing_system.dto.AssignTicketRequest;
+import helpdesk_ticketing_system.dto.CreateCommentRequest;
 import helpdesk_ticketing_system.dto.CreateTicketRequest;
 import helpdesk_ticketing_system.dto.UpdateStatusRequest;
+import helpdesk_ticketing_system.model.Comment;
 import helpdesk_ticketing_system.model.Ticket;
 import helpdesk_ticketing_system.service.TicketService;
 import org.springframework.http.HttpStatus;
@@ -37,6 +39,14 @@ public class TicketController {
     public Ticket updateStatus(@PathVariable Long ticketId,
                                @RequestBody UpdateStatusRequest request) {
         return ticketService.updateStatus(ticketId, request);
+    }
+
+    // Add comment
+    @PostMapping("/{ticketId}/comments")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Comment addComment(@PathVariable Long ticketId,
+                              @RequestBody CreateCommentRequest request) {
+        return ticketService.addComment(ticketId, request);
     }
 
 }
