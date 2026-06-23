@@ -18,6 +18,7 @@ public class AgentService {
         Agent agent = new Agent();
         agent.setFirstName(request.getFirstName());
         agent.setLastName(request.getLastName());
+        agent.setEmail(request.getEmail());
 
     }
 
