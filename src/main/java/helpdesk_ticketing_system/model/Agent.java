@@ -29,4 +29,8 @@ public class Agent {
     public Long getAgentId() {
         return agentId;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
 }
