@@ -25,4 +25,8 @@ public class Agent {
 
     public Agent() {
     }
+
+    public Long getAgentId() {
+        return agentId;
+    }
 }
