@@ -13,4 +13,8 @@ public class CreateAgentRequest {
         this.firstName = firstName;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
 }
