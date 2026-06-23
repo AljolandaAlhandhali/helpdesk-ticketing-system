@@ -1,5 +1,6 @@
 package helpdesk_ticketing_system.controller;
 
+import helpdesk_ticketing_system.dto.AssignTicketRequest;
 import helpdesk_ticketing_system.dto.CreateTicketRequest;
 import helpdesk_ticketing_system.model.Ticket;
 import helpdesk_ticketing_system.service.TicketService;
@@ -22,4 +23,12 @@ public class TicketController {
     public Ticket createTicket(@RequestBody CreateTicketRequest request) {
         return ticketService.createTicket(request);
     }
+
+    // Assign ticket to agent
+    @PostMapping("/{ticketId}/assign")
+    public Ticket assignTicket(@PathVariable Long ticketId,
+                               @RequestBody AssignTicketRequest request) {
+        return ticketService.assignTicket(ticketId, request);
+    }
+
 }
