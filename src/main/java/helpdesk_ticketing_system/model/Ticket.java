@@ -63,4 +63,8 @@ public class Ticket {
         return status;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
 }
