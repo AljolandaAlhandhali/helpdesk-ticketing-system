@@ -17,4 +17,8 @@ public class CreateAgentRequest {
         return lastName;
     }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
 }
