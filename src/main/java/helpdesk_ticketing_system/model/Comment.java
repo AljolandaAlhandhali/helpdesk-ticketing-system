@@ -34,4 +34,8 @@ public class Comment {
         return message;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
 }
