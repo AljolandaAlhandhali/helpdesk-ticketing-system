@@ -103,5 +103,9 @@ public class Ticket {
         this.category = category;
     }
 
+    public void setResolvedAt(LocalDateTime resolvedAt) {
+        this.resolvedAt = resolvedAt;
+    }
+
 
 }
