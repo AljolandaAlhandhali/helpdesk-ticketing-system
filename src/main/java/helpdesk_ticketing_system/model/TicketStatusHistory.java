@@ -51,4 +51,8 @@ public class TicketStatusHistory {
         return ticket;
     }
 
+    public void setOldStatus(TicketStatus oldStatus) {
+        this.oldStatus = oldStatus;
+    }
+
 }
