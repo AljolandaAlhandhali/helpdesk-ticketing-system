@@ -67,4 +67,8 @@ public class Ticket {
         return category;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
 }
