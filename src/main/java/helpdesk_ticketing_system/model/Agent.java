@@ -45,4 +45,8 @@ public class Agent {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public String getEmail() {
+        return email;
+    }
 }
