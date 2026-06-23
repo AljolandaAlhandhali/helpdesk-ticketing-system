@@ -2,14 +2,18 @@ package helpdesk_ticketing_system.service;
 
 import helpdesk_ticketing_system.dto.AssignTicketRequest;
 import helpdesk_ticketing_system.dto.CreateTicketRequest;
+import helpdesk_ticketing_system.dto.UpdateStatusRequest;
 import helpdesk_ticketing_system.enums.TicketStatus;
 import helpdesk_ticketing_system.exception.BusinessRuleException;
 import helpdesk_ticketing_system.exception.ResourceNotFoundException;
 import helpdesk_ticketing_system.model.Agent;
 import helpdesk_ticketing_system.model.Ticket;
+import helpdesk_ticketing_system.model.TicketStatusHistory;
 import helpdesk_ticketing_system.model.User;
 import helpdesk_ticketing_system.repository.*;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 
 @Service
 public class TicketService {
@@ -60,6 +64,33 @@ public class TicketService {
                 .orElseThrow(() -> new ResourceNotFoundException("Agent not found"));
 
         ticket.setAgent(agent);
+        return ticketRepository.save(ticket);
+    }
+
+    // Update status with rules
+    public Ticket updateStatus(Long ticketId, UpdateStatusRequest request) {
+        Ticket ticket = getTicketById(ticketId);
+
+        TicketStatus current = ticket.getStatus();
+        TicketStatus next = request.getStatus();
+
+        if (!isValidTransition(current, next)) {
+            throw new BusinessRuleException(
+                    "Invalid status transition from " + current + " to " + next);
+        }
+
+        TicketStatusHistory history = new TicketStatusHistory();
+        history.setOldStatus(current);
+        history.setNewStatus(next);
+        history.setTicket(ticket);
+        ticketStatusHistoryRepository.save(history);
+
+        ticket.setStatus(next);
+
+        if (next == TicketStatus.RESOLVED) {
+            ticket.setResolvedAt(LocalDateTime.now());
+        }
+
         return ticketRepository.save(ticket);
     }
 }
