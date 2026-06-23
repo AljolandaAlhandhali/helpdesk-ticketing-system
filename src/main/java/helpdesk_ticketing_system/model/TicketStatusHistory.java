@@ -39,4 +39,8 @@ public class TicketStatusHistory {
         return oldStatus;
     }
 
+    public TicketStatus getNewStatus() {
+        return newStatus;
+    }
+
 }
