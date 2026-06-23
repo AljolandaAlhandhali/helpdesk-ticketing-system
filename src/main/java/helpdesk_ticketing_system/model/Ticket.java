@@ -32,4 +32,8 @@ public class Ticket {
 
     private LocalDateTime resolvedAt;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
 }
