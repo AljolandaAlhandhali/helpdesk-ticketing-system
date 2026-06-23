@@ -83,4 +83,8 @@ public class Ticket {
         return agent;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 }
