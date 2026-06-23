@@ -24,4 +24,8 @@ public class User {
     public User() {
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
 }
