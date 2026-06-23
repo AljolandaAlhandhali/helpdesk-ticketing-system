@@ -153,4 +153,14 @@ public class TicketService {
                 .toList();
     }
 
+    // SLA by priority
+    private Duration getSlaDuration(Priority priority) {
+        return switch (priority) {
+            case CRITICAL -> Duration.ofHours(4);
+            case HIGH -> Duration.ofDays(1);
+            case MEDIUM -> Duration.ofDays(3);
+            case LOW -> Duration.ofDays(7);
+        };
+    }
+
 }
