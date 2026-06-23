@@ -21,4 +21,8 @@ public class CreateAgentRequest {
         this.lastName = lastName;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
 }
