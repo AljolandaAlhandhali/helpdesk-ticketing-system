@@ -42,4 +42,8 @@ public class Comment {
         return createdAt;
     }
 
+    public Ticket getTicket() {
+        return ticket;
+    }
+
 }
