@@ -5,4 +5,8 @@ public class CreateUserRequest {
     private String lastName;
     private String email;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
 }
