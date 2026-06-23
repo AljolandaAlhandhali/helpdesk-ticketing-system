@@ -28,4 +28,7 @@ public class TicketStatusHistory {
     @JoinColumn(name = "TICKET_ID")
     private Ticket ticket;
 
+    public TicketStatusHistory() {
+    }
+
 }
