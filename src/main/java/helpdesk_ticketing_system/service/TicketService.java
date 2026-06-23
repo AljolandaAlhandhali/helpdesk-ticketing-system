@@ -13,6 +13,7 @@ import helpdesk_ticketing_system.model.*;
 import helpdesk_ticketing_system.repository.*;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -129,6 +130,16 @@ public class TicketService {
         if (assignedTo != null) return ticketRepository.findByAgentAgentId(assignedTo);
 
         return ticketRepository.findAll();
+    }
+
+    // Average resolution time in hours
+    public double averageResolutionTime() {
+        return ticketRepository.findAll()
+                .stream()
+                .filter(ticket -> ticket.getResolvedAt() != null)
+                .mapToLong(ticket -> Duration.between(ticket.getCreatedAt(), ticket.getResolvedAt()).toHours())
+                .average()
+                .orElse(0);
     }
 
 }
