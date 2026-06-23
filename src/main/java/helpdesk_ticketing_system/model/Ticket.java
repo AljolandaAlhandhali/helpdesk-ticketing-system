@@ -75,4 +75,8 @@ public class Ticket {
         return resolvedAt;
     }
 
+    public User getUser() {
+        return user;
+    }
+
 }
