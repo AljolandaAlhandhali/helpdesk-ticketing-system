@@ -47,4 +47,8 @@ public class Ticket {
         return ticketId;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
 }
