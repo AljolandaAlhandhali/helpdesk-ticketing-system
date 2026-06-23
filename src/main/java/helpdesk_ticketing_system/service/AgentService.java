@@ -19,7 +19,7 @@ public class AgentService {
         agent.setFirstName(request.getFirstName());
         agent.setLastName(request.getLastName());
         agent.setEmail(request.getEmail());
-
+        return agentRepository.save(agent);
     }
 
 }
