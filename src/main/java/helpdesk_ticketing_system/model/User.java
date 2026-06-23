@@ -2,6 +2,8 @@ package helpdesk_ticketing_system.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -16,5 +18,7 @@ public class User {
 
     @Column(unique = true, nullable = false)
     private String email;
+
+    private LocalDateTime createdAt = LocalDateTime.now();
 
 }
