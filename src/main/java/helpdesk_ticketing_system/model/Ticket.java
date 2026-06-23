@@ -59,4 +59,8 @@ public class Ticket {
         return priority;
     }
 
+    public TicketStatus getStatus() {
+        return status;
+    }
+
 }
