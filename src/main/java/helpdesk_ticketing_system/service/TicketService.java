@@ -93,4 +93,13 @@ public class TicketService {
 
         return ticketRepository.save(ticket);
     }
+
+    // Allowed status transitions
+    private boolean isValidTransition(TicketStatus current, TicketStatus next) {
+        return (current == TicketStatus.OPEN && next == TicketStatus.IN_PROGRESS)
+                || (current == TicketStatus.IN_PROGRESS && next == TicketStatus.RESOLVED)
+                || (current == TicketStatus.RESOLVED && next == TicketStatus.CLOSED)
+                || (current == TicketStatus.CLOSED && next == TicketStatus.REOPENED)
+                || (current == TicketStatus.REOPENED && next == TicketStatus.RESOLVED);
+    }
 }
