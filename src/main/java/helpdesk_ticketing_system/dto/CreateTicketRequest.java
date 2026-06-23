@@ -34,4 +34,8 @@ public class CreateTicketRequest {
         this.title = title;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
 }
