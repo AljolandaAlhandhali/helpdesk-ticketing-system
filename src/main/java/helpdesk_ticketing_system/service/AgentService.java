@@ -15,6 +15,7 @@ public class AgentService {
 
     // Create new agent
     public Agent createAgent(CreateAgentRequest request) {
+        Agent agent = new Agent();
 
     }
 
