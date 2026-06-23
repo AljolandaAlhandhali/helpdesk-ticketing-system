@@ -3,6 +3,8 @@ package helpdesk_ticketing_system.model;
 import helpdesk_ticketing_system.enums.TicketStatus;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "TICKET_STATUS_HISTORY")
 public class TicketStatusHistory {
@@ -18,5 +20,8 @@ public class TicketStatusHistory {
     @Enumerated(EnumType.STRING)
     @Column(name = "NEW_STATUS")
     private TicketStatus newStatus;
+
+    @Column(name = "CHANGED_AT")
+    private LocalDateTime changedAt = LocalDateTime.now();
 
 }
