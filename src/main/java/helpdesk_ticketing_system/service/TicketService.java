@@ -1,15 +1,13 @@
 package helpdesk_ticketing_system.service;
 
 import helpdesk_ticketing_system.dto.AssignTicketRequest;
+import helpdesk_ticketing_system.dto.CreateCommentRequest;
 import helpdesk_ticketing_system.dto.CreateTicketRequest;
 import helpdesk_ticketing_system.dto.UpdateStatusRequest;
 import helpdesk_ticketing_system.enums.TicketStatus;
 import helpdesk_ticketing_system.exception.BusinessRuleException;
 import helpdesk_ticketing_system.exception.ResourceNotFoundException;
-import helpdesk_ticketing_system.model.Agent;
-import helpdesk_ticketing_system.model.Ticket;
-import helpdesk_ticketing_system.model.TicketStatusHistory;
-import helpdesk_ticketing_system.model.User;
+import helpdesk_ticketing_system.model.*;
 import helpdesk_ticketing_system.repository.*;
 import org.springframework.stereotype.Service;
 
@@ -102,4 +100,16 @@ public class TicketService {
                 || (current == TicketStatus.CLOSED && next == TicketStatus.REOPENED)
                 || (current == TicketStatus.REOPENED && next == TicketStatus.RESOLVED);
     }
+
+    // Add comment
+    public Comment addComment(Long ticketId, CreateCommentRequest request) {
+        Ticket ticket = getTicketById(ticketId);
+
+        Comment comment = new Comment();
+        comment.setMessage(request.getMessage());
+        comment.setTicket(ticket);
+
+        return commentRepository.save(comment);
+    }
+
 }
