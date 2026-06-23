@@ -9,4 +9,8 @@ public class UpdateStatusRequest {
         return status;
     }
 
+    public void setStatus(TicketStatus status) {
+        this.status = status;
+    }
+
 }
