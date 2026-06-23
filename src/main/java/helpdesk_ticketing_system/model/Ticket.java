@@ -43,4 +43,8 @@ public class Ticket {
     public Ticket() {
     }
 
+    public Long getTicketId() {
+        return ticketId;
+    }
+
 }
