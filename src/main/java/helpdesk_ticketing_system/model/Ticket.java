@@ -30,4 +30,6 @@ public class Ticket {
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    private LocalDateTime resolvedAt;
+
 }
