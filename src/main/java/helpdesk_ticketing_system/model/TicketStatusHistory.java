@@ -43,4 +43,8 @@ public class TicketStatusHistory {
         return newStatus;
     }
 
+    public LocalDateTime getChangedAt() {
+        return changedAt;
+    }
+
 }
