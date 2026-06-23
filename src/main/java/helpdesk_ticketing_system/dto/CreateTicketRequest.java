@@ -8,5 +8,6 @@ public class CreateTicketRequest {
     private String description;
     private Priority priority;
     private Category category;
+    private Long userId;
 
 }
