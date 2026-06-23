@@ -111,5 +111,9 @@ public class Ticket {
         this.user = user;
     }
 
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
+
 
 }
