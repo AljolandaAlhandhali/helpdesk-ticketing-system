@@ -46,4 +46,8 @@ public class Comment {
         return ticket;
     }
 
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
 }
