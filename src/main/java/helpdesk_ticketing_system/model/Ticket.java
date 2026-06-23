@@ -95,5 +95,9 @@ public class Ticket {
         this.priority = priority;
     }
 
+    public void setStatus(TicketStatus status) {
+        this.status = status;
+    }
+
 
 }
