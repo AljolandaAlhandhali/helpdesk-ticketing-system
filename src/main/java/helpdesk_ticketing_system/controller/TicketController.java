@@ -4,11 +4,16 @@ import helpdesk_ticketing_system.dto.AssignTicketRequest;
 import helpdesk_ticketing_system.dto.CreateCommentRequest;
 import helpdesk_ticketing_system.dto.CreateTicketRequest;
 import helpdesk_ticketing_system.dto.UpdateStatusRequest;
+import helpdesk_ticketing_system.enums.Category;
+import helpdesk_ticketing_system.enums.Priority;
+import helpdesk_ticketing_system.enums.TicketStatus;
 import helpdesk_ticketing_system.model.Comment;
 import helpdesk_ticketing_system.model.Ticket;
 import helpdesk_ticketing_system.service.TicketService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/tickets")
@@ -55,5 +60,13 @@ public class TicketController {
         return ticketService.getTicketById(ticketId);
     }
 
-
+    // Search tickets
+    @GetMapping
+    public List<Ticket> searchTickets(
+            @RequestParam(required = false) TicketStatus status,
+            @RequestParam(required = false) Priority priority,
+            @RequestParam(required = false) Category category,
+            @RequestParam(required = false) Long assignedTo) {
+        return ticketService.searchTickets(status, priority, category, assignedTo);
+    }
 }
