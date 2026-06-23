@@ -38,4 +38,8 @@ public class Comment {
         this.message = message;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
 }
