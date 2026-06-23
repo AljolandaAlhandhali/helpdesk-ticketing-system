@@ -112,4 +112,10 @@ public class TicketService {
         return commentRepository.save(comment);
     }
 
+    // Get ticket by id
+    public Ticket getTicketById(Long ticketId) {
+        return ticketRepository.findById(ticketId)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket not found"));
+    }
+
 }
