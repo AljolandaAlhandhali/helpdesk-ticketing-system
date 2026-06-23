@@ -6,4 +6,8 @@ public class AssignTicketRequest {
     public Long getAgentId() {
         return agentId;
     }
+
+    public void setAgentId(Long agentId) {
+        this.agentId = agentId;
+    }
 }
