@@ -26,4 +26,8 @@ public class CreateTicketRequest {
         return category;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
 }
