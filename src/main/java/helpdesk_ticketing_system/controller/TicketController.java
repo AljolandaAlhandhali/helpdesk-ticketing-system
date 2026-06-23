@@ -69,4 +69,10 @@ public class TicketController {
             @RequestParam(required = false) Long assignedTo) {
         return ticketService.searchTickets(status, priority, category, assignedTo);
     }
+
+    // Average resolution time
+    @GetMapping("/metrics/avg-resolution-time")
+    public double averageResolutionTime() {
+        return ticketService.averageResolutionTime();
+    }
 }
