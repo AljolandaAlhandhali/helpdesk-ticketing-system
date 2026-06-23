@@ -32,4 +32,8 @@ public class User {
         return firstName;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
 }
