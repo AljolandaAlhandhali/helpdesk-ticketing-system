@@ -5,6 +5,8 @@ import helpdesk_ticketing_system.enums.Priority;
 import helpdesk_ticketing_system.enums.TicketStatus;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "tickets")
 public class Ticket {
@@ -25,5 +27,7 @@ public class Ticket {
 
     @Enumerated(EnumType.STRING)
     private Category category;
+
+    private LocalDateTime createdAt = LocalDateTime.now();
 
 }
